@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <title>Productions</title>
 </head>
 
@@ -16,11 +17,45 @@
             <ul class="product-categories">
             </ul>
             <div class="products">
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide product">
+                            <img data-src="a.jpg" class="swiper-lazy product-image">
+                            <div class="product-name">Pro Cat Plus x ST3250 Li Metal Şanzımanlı Çift Akülü Şarjlı
+                                Vidalama Matkap 2 Yıl Garantili</div>
+                            <div class="product-price">
+                                <div class="old-price">199,90 TL</div>
+                                <div class="new-price">159.90 TL</div>
+                            </div>
+                            <button class="product-button">Sepete Ekle</button>
+                            <div class="product-shipping"><i class="fas fa-truck"></i> Ücretsiz Kargo</div>
+                        </div>
+                        <div class="swiper-slide product">Slide 2</div>
+                        <div class="swiper-slide product">Slide 3</div>
+                        <div class="swiper-slide product">Slide 3</div>
+                        <div class="swiper-slide product">Slide 3</div>
+                        <div class="swiper-slide product">Slide 3</div>
+                        <div class="swiper-slide product">Slide 3</div>
+                        <div class="swiper-slide product">Slide 3</div>
+                        <div class="swiper-slide product">Slide 3</div>
+                        <div class="swiper-slide product">Slide 3</div>
+                        ...
+                    </div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="button swiper-button-prev"></div>
+                    <div class="button swiper-button-next"></div>
+                </div>
             </div>
         </div>
     </div>
     <script src="dataController.js"></script>
     <script src="UIController.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/8ebb2767f2.js" crossorigin="anonymous"></script>
+    <script type="module" src="sliderController.js"></script>
 </body>
 
 </html>
