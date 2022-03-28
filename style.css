@@ -19,7 +19,8 @@ body{
 }
 .container{
     padding: 20px;
-    width: 900px;
+    max-width: 1000px;
+    width: 90%;
     height: 500px;
     background-color:white;
     border-radius: 5px;
@@ -35,6 +36,7 @@ body{
     height: 100%;
     max-height: 89%;
 }
+/* Categories design */
 .product-categories{
     width: 23%;
     height: 100%;
@@ -47,10 +49,12 @@ body{
 .category{
     list-style-type:none;
     padding: 10px;
+    padding-bottom: 12px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow:ellipsis;
     cursor: pointer;
+    margin-bottom: 5px;
 }
 .category:hover{
     background-color: rgba(0, 0, 139, 0.1);
@@ -59,9 +63,9 @@ body{
     box-shadow: -5px 0px 0px 0px darkblue;
     background-color:rgba(0, 0, 139, 0.1);
 }
-
+/* Slider & product container design */
 .products{
-    width: 77%;
+    width: 76%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -73,15 +77,15 @@ body{
 }
 .button{
     background-color: darkblue;
-    opacity: .6;
+    opacity: .7;
     color: white !important;
     padding: 30px;
-    border-radius: 50%;
-    transform: translateY(-100px) !important;
+    border-radius: 40%;
+    transform: translateY(-50px) !important;
     transition: .2s box-shadow;
 }
 .button:hover{
-    box-shadow: 0 0 0 2px white;
+    box-shadow: 0 0 0 2px darkblue;
 }
 .swiper-button-prev{
     left: -30px !important;
@@ -97,7 +101,7 @@ body{
     transform: translateX(-15px);
     font-weight: 900;
 }
-
+/* Product design */
 .product{
     display: flex;
     flex-direction: column;
@@ -116,7 +120,16 @@ body{
     border: 1px solid lightgrey;
     border-radius: 5px;
 }
+.product-image > img{
+    width: 200px;
+    height: 200px;
+    transition: .2s;
+}
+.product-image > img:hover{
+    transform: scale(1.05);
+}
 .product-name{
+    min-height: 34px;
     font-size: 13px;
     font-weight: 700;
     margin: 10px 5px;
@@ -135,18 +148,19 @@ body{
 }
 .product-price > .old-price{
     color: grey;
-    font-size: 12px;
+    font-size: 11px;
     text-align: right;
-    font-weight: 900;
+    font-weight: 700;
     margin-right: 5px;
     text-decoration:line-through;
     text-decoration-thickness: 1px;
+    transform: translateY(1px);
 }
 .product-price > .new-price{
     color: darkblue;
-    font-size: 20px;
+    font-size: 16px;
     text-align: right;
-    font-weight: 700;
+    font-weight: 900;
 }
 .product-button{
     padding: 10px;
@@ -164,8 +178,104 @@ body{
     font-size: 10px;
     font-weight: 900;
     text-align: right;
-    margin:10px 5px;
+    margin:10px 5px 0;
 }
 .product-shipping > i{
     color: green;
+}
+/* Popup Design */
+.popup{
+    background-color: white;
+    color: rgb(0, 0, 75);
+    width: 370px;
+    height: 70px;
+    z-index: 20;
+    position: fixed;
+    right: 10px;
+    bottom: -100px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px grey;
+    transition: .15s;
+}
+.popup > i{
+    font-size: 24px;
+    margin: 20px;
+    cursor: pointer;
+}
+.popup-container{
+    display: flex;
+    align-items: center;
+}
+.popup-container > i{
+    font-size: 30px;
+    margin: 20px;
+}
+.popup-text{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+/* Mobile phone design */
+@media(max-width: 480px) {
+    .container{
+        width: 95%;
+        padding: 0px;
+    }
+    .container h2{
+        margin-top: 20px;
+        text-align: center;
+    }
+    .product-container{
+        flex-direction: column;
+    }
+    .product-categories{
+        flex-direction: row;
+        width: auto;
+        height: auto;
+        overflow-x: scroll;
+        margin: 0;
+        margin-left: 5px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid lightgray;
+    }
+    .product-categories::-webkit-scrollbar {
+        height: 3px;
+    }
+    .product-categories::-webkit-scrollbar-track {
+        display: none;
+    }
+    .product-categories::-webkit-scrollbar-thumb {
+        background-color: darkblue;
+        border-radius: 50px;
+    }
+    
+    .category{
+        overflow:visible;
+        cursor: pointer;
+        margin-right: 5px;
+        padding-bottom: 15px;
+    }
+    .category-active{
+        box-shadow: 0px 5px 0px 0px darkblue;
+        box-shadow: none;
+        background-color:rgba(0, 0, 139, 0.1);
+    }
+    .products{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .product{
+        margin-left: 5px !important;
+    }
+    .button{
+        display: none !important;
+    }
+    .popup{
+        right: auto;
+    }
 }
