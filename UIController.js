@@ -3,7 +3,7 @@ import { swiper } from "./sliderController.js"
 window.addEventListener("load", async () => {
     await getCategories()
     appendCategoriesToHTML()
-    appendProductsToHTML()
+    updateProducts(categoryList[0]) // When page rendering first time we choose "active" first element in array
 })
 // Control categories click event
 document.querySelector(".product-categories").addEventListener("click", (e) => {
@@ -34,10 +34,6 @@ function changeActiveCategory(activeCategory) {
         categoryNodes.className = "category"
     })
     activeCategory.classList.add("category-active")
-}
-// When page rendering first time we choose "active" first element in array
-function appendProductsToHTML() {
-    updateProducts(categoryList[0])
 }
 // Get chosen category, clear products container, create new node and append those nodes on swiper
 function updateProducts(category) {
